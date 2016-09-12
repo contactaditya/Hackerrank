@@ -25,7 +25,7 @@ public class DiagonalDifference {
   }
  }
   
-  System.out.println();
-  System.out.println("The absolute difference between the sums of it's diagonals is: " + Math.abs(diagonal1 - diagonal2));          
+ System.out.println();
+ System.out.println("The absolute difference between the sums of it's diagonals is: " + Math.abs(diagonal1 - diagonal2));          
  }
 }
