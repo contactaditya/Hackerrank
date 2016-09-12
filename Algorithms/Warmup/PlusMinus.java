@@ -18,7 +18,7 @@ public class PlusMinus {
       
     array[i] = input.nextInt(); 
          
-	if(array[i] == 0) {
+    if(array[i] == 0) {
       counterzeroes++; 
     } 
     if(array[i] > 0)  {
@@ -33,6 +33,6 @@ public class PlusMinus {
    System.out.println("A decimal representing the fraction of negative numbers in the array: " + counternegative/n);
    System.out.println("A decimal representing the fraction of zeroes in the array: " + counterzeroes/n);    
         
+  }
  }
-}
 }
