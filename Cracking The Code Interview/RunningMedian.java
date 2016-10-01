@@ -9,7 +9,7 @@ public class RunningMedian {
     lowers.add(number);
   }
   else {
-	highers.add(number);
+    highers.add(number);
   }	 
  }
  
@@ -18,7 +18,7 @@ public class RunningMedian {
    PriorityQueue<Integer> smallerHeap = lowers.size() > highers.size() ? highers : lowers; 
    
    if(biggerHeap.size() - smallerHeap.size() >= 2) {
-	 smallerHeap.add(biggerHeap.poll());
+       smallerHeap.add(biggerHeap.poll());
    } 
  }
   
@@ -27,17 +27,17 @@ public class RunningMedian {
    PriorityQueue<Integer> smallerHeap = lowers.size() > highers.size() ? highers : lowers; 
 	   
    if(biggerHeap.size() == smallerHeap.size()) {
-     return ((double)biggerHeap.peek() + smallerHeap.peek())/2;
+      return ((double)biggerHeap.peek() + smallerHeap.peek())/2;
    }
    
    else {
-	 return biggerHeap.peek();  
+      return biggerHeap.peek();  
    }			 
  }
  
  private static class MedianComparator implements Comparator<Integer> {
   public int compare(Integer o1, Integer o2) {
-   return o2 - o1;
+     return o2 - o1;
   }
  }
  
@@ -56,7 +56,7 @@ public class RunningMedian {
   System.out.println();
   System.out.print("The running median of the array is: ");
   for(int i = 0; i < array.length; i++) {
-	System.out.print(medians[i] + " ");   
+     System.out.print(medians[i] + " ");   
   }
  } 
   
