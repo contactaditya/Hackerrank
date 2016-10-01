@@ -30,22 +30,21 @@ public class HashTablesRansomNote {
  public static HashMap<String, Integer> getStringFrequency(String[] text) {
    HashMap<String, Integer> frequencies = new HashMap<String, Integer>();
    for(String word : text) {
-	 if(!frequencies.containsKey(word)) {
-		frequencies.put(word, 0); 
-	 }
-	 frequencies.put(word, frequencies.get(word) + 1);
+     if(!frequencies.containsKey(word)) {
+        frequencies.put(word, 0); 
+     }
+   frequencies.put(word, frequencies.get(word) + 1);
    }
-   
    return frequencies;
  }
  
  public static boolean hasEnoughStrings(HashMap<String, Integer> magazineFrequency, HashMap<String, Integer> ransomFrequency) {
    HashMap<String, Integer> frequencies = new HashMap<String, Integer>();
    for(Map.Entry<String, Integer> entry : ransomFrequency.entrySet()) {
-	String word = entry.getKey();   
-	if(!magazineFrequency.containsKey(word) || magazineFrequency.get(word) < entry.getValue()) {
-	  return false;	
-	}  
+     String word = entry.getKey();   
+     if(!magazineFrequency.containsKey(word) || magazineFrequency.get(word) < entry.getValue()) {
+        return false;	
+     }  
    } 
   return true;
  }
