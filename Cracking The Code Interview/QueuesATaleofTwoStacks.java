@@ -24,9 +24,9 @@ public class QueuesATaleofTwoStacks {
  
  private void shiftStacks() {
    if(stackOldestOnTop.isEmpty()) {
-	while(!stackNewestOnTop.isEmpty()) {
-	 stackOldestOnTop.push(stackNewestOnTop.pop());	
-	}
+     while(!stackNewestOnTop.isEmpty()) {
+       stackOldestOnTop.push(stackNewestOnTop.pop());	
+     }
    }
  }
 }
@@ -48,8 +48,8 @@ public static void main(String[] args) {
   } else if (operation == 2) { // dequeue
     queue.dequeue();
   } else if (operation == 3) { // print/peek
-	System.out.println();	 
-	System.out.println(queue.peek());
+    System.out.println();	 
+    System.out.println(queue.peek());
   }
  }
  scan.close();
