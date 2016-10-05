@@ -6,14 +6,14 @@ public class StringsMakingAnagrams {
 
  public static int getDelta(int[] array1, int[] array2) {
   if(array1.length != array2.length) {
-	return -1;  
+     return -1;  
   }
   
   int delta = 0;
   
   for(int i = 0; i < array1.length; i++) {
-	int difference = Math.abs(array1[i] - array2[i]);
-	delta += difference;
+     int difference = Math.abs(array1[i] - array2[i]);
+     delta += difference;
   }
 	 
  return delta;	 
@@ -25,9 +25,9 @@ public class StringsMakingAnagrams {
   
   for(int i=0; i < string.length(); i++) {
     char c = string.charAt(i);
-	int offset = (int) 'a';
-	int code = c - offset;
-	charCounts[code]++;
+    int offset = (int) 'a';
+    int code = c - offset;
+    charCounts[code]++;
   }
   return charCounts;	 
  }
