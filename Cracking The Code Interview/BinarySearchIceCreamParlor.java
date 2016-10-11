@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-class IceCream implements Comparable{
+class IceCream implements Comparable {
   int cost;
   int index;
 
