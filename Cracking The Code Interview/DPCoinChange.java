@@ -16,7 +16,7 @@ public class DPCoinChange {
 		  
   for(int i = 0; i < n; i++) {	  
    for(int j = coins[i]; j <= money; j++) {	   
-	 table[j] += table[j-coins[i]];
+     table[j] += table[j-coins[i]];
    }
   } 
 	  
@@ -32,7 +32,7 @@ public class DPCoinChange {
   System.out.println();
   System.out.print("Enter the distinct integers where each integer dollar value of a coin available in an infinite amount: ");
   for(int i = 0; i < m; i++) {
-	coins[i] = input.nextInt();
+    coins[i] = input.nextInt();
   }
   System.out.println();
   System.out.println("The number of ways we can make change for " + n + " dollars using an infinite supply of our " + m + " types of coin are: " + makeChange(coins, n));
