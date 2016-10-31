@@ -11,35 +11,35 @@ public class TrieNode {
   }
 	    
   private TrieNode getNode(char c) {
-	return children[getCharIndex(c)];
+    return children[getCharIndex(c)];
   }
 	    
   private TrieNode setNode(char c, TrieNode node) {
-	return children[getCharIndex(c)] = node;
+    return children[getCharIndex(c)] = node;
   }
 	    
   public void add(String s) {
-	add(s, 0);
+    add(s, 0);
   }
 	    
  public void add(String s, int index) {
   size++;	
   if(index == s.length()) {
-	return;
+    return;
   }
   char current = s.charAt(index);
   int charCode = getCharIndex(current);
   TrieNode child = getNode(current);
   if(child == null) {
     child = new TrieNode();
-	setNode(current, child);
+    setNode(current, child);
   }
   child.add(s, index + 1);
  }
  
  public int findCount(String s, int index) {
   if(index == s.length()) {
-	return size;
+    return size;
   }
 	
   TrieNode child = getNode(s.charAt(index));
