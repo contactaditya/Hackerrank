@@ -8,51 +8,51 @@ public class BFSShortestReachInAGraph {
    private LinkedList<Integer> adj[]; // Adjacency List for each vertex
 	           
    public Graph(int size) {
-     vertices = size;
-     adj = new LinkedList[size];  
+	 vertices = size;
+	 adj = new LinkedList[size];  
 	            
     for(int i=0;i<size;i++) {
-       adj[i] = new LinkedList();  
+	 adj[i] = new LinkedList();  
     }	   
    }
 
    public void addEdge(int first, int second) {
-      adj[first].add(second);  
-      adj[second].add(first);  
+	 adj[first].add(second);  
+	 adj[second].add(first);  
    }
 	        
    public int[] shortestReach(int startId) { // 0 indexed
 	            
    // Mark all the vertices of the graph as not visited. 
-     boolean visited[] = new boolean[vertices];
+	 boolean visited[] = new boolean[vertices];
 	  
    // Create a queue for BFS.
-     LinkedList<Integer> queue = new LinkedList<Integer>();
+	 LinkedList<Integer> queue = new LinkedList<Integer>();
 	            
-     int[] distances = new int[vertices];
+	 int[] distances = new int[vertices];
 	            
-     Arrays.fill(distances, -1);
+	 Arrays.fill(distances, -1);
 	            
-     distances[startId] = 0; 
+	 distances[startId] = 0; 
 	            
    // Mark the current node as visited and enqueue it.
-     visited[startId] = true;
-     queue.add(startId);
+	 visited[startId] = true;
+	 queue.add(startId);
 	            
-     while(!queue.isEmpty()) {
+	 while(!queue.isEmpty()) {
    // Dequeue a vertex from queue and print it.  
-      startId = queue.poll();
+	  startId = queue.poll();
 	   
    // Get all adjacent vertices of the dequeued vertex source. If the vertex has not been visited yet, then mark it visited and enqueue it.
 		
-      for(Integer neighbour : adj[startId]) {
-	if(!visited[neighbour]) {
-	  visited[neighbour] = true;
-	  queue.add(neighbour);
-	  distances[neighbour] = distances[startId] + 6;   
-	}   
-       }     
-     }
+	  for(Integer neighbour : adj[startId]) {
+	   if(!visited[neighbour]) {
+		visited[neighbour] = true;
+		queue.add(neighbour);
+	    distances[neighbour] = distances[startId] + 6;   
+	   }   
+	  }     
+	 }
   return distances;    
    }
   }
@@ -61,11 +61,11 @@ public class BFSShortestReachInAGraph {
   Scanner scanner = new Scanner(System.in);
   System.out.print("Enter the number of queries: ");
   int queries = scanner.nextInt();
-  
-  System.out.println();
-  System.out.print("Enter the number of nodes and the number of edges in the graph: ");  
-	        
+ 	        
   for (int t = 0; t < queries; t++) {
+	  
+   System.out.println();
+   System.out.print("Enter the number of nodes and the number of edges in the graph: ");  
   // Create a graph of size n where each edge weight is 6:
    Graph graph = new Graph(scanner.nextInt());
  
@@ -90,11 +90,11 @@ public class BFSShortestReachInAGraph {
   int startId = scanner.nextInt() - 1;
   int[] distances = graph.shortestReach(startId);
 	 
-  for (int i = 0; i < distances.length; i++) {
+  for (int i = 0; i < distances.length; i++) {  
     if (i != startId) {
-     System.out.print(distances[i]);
-     System.out.print(" ");
-    }
+	 System.out.print(distances[i]);
+	 System.out.print(" ");
+	}
   }
   System.out.println();            
  }
