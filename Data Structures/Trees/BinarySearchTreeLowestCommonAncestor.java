@@ -1,13 +1,13 @@
 import java.util.*;
 
  public class BinarySearchTreeLowestCommonAncestor {
-	Node root;
+    Node root;
 	
-	public Node findLowestCommonAncestor(Node node, int n1, int n2) {
+      public Node findLowestCommonAncestor(Node node, int n1, int n2) {
 		 
-	   if (node == null) {
-	     return null;
-	   }
+	if (node == null) {
+	   return null;
+	}
 		    
 	   // If both n1 and n2 are smaller than root, then LCA lies on the left side
        if (node.data > n1 && node.data > n2) {
@@ -20,7 +20,7 @@ import java.util.*;
        }
        
        return node; 
-	}
+      }
 
     public static void main(String[] args) {
       BinarySearchTreeLowestCommonAncestor tree = new BinarySearchTreeLowestCommonAncestor();
@@ -35,5 +35,5 @@ import java.util.*;
       Node t = tree.findLowestCommonAncestor(tree.root, n1, n2);
       System.out.println("LCA of " + n1 + " and " + n2 + " is " + t.data);
 
-	}
+     }
   }
