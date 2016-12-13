@@ -9,7 +9,7 @@ public class FindMergePointOfTwoLists {
 	public FindMergePointOfTwoLists() {
    // this is an empty list, so the reference to the head node is set to a new node with no data				  
 	   head = new LinkedListNode(null);
-       size = 0;
+           size = 0;
 	}
 	
     public static int getCount(LinkedListNode node) {
@@ -28,21 +28,21 @@ public class FindMergePointOfTwoLists {
 	   LinkedListNode current1 = headA;
 	   LinkedListNode current2 = headB;
  	         		     
-	   for(int i = 0; i < d; i++) {
-		  if (current1 == null) {
-             return -1;
+	  for(int i = 0; i < d; i++) {
+             if (current1 == null) {
+               return -1;
+             }
+            current1 = current1.next;
           }
-		  current1 = current1.next;
-       }
 			     
-	   while (current1 != null && current2 != null) {
+	 while (current1 != null && current2 != null) {
            if (current1.data == current2.data) {
                return (int) current1.data;
            }
            current1 = current1.next;
            current2 = current2.next;
-       } 
-	return -1;   
+         } 
+     return -1;   
    }
 
    static int FindMergeNode(LinkedListNode headA, LinkedListNode headB) {
