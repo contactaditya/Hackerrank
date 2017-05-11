@@ -4,18 +4,18 @@ import java.util.*;
  public class PrimsMSTSpecialSubtree {
 	 
     public static int minKey(int key[], Boolean MSTSet[], int vertices) {
-	  // Initialize min value
-	  int min = Integer.MAX_VALUE, min_index = -1;
+       // Initialize min value
+       int min = Integer.MAX_VALUE, min_index = -1;
 
-	  for (int v = 0; v < vertices; v++) {
-	     if (MSTSet[v] == false && key[v] < min) {
-	        min = key[v];
-	        min_index = v;
-	     }
-	  }
+       for (int v = 0; v < vertices; v++) {
+	 if (MSTSet[v] == false && key[v] < min) {
+	    min = key[v];
+	    min_index = v;
+	 }
+       }
 	  
-	 return min_index;
-	}
+      return min_index;
+    }
 		  
     public static void printMST(int parent[], int n, int graph[][], int vertices) {
         int sum = 0;
@@ -63,38 +63,38 @@ import java.util.*;
             }
          }
 
-        printMST(parent, vertices, graph, vertices);
+      printMST(parent, vertices, graph, vertices);
     }
 
-	public static void main(String[] args) { 
-	   Scanner scanner = new Scanner(System.in);				  
-	   System.out.print("Enter the number of nodes and the number of edges in the graph: ");  
-	   // Create a graph of size n where each edge weight is 6:
-	   int numberOfNodes = scanner.nextInt();
-	   int numberOfEdges = scanner.nextInt();
-	   
-	   int graph[][] = new int[numberOfNodes][numberOfNodes];
+   public static void main(String[] args) { 
+      Scanner scanner = new Scanner(System.in);				  
+      System.out.print("Enter the number of nodes and the number of edges in the graph: ");  
+      // Create a graph of size n where each edge weight is 6:
+      int numberOfNodes = scanner.nextInt();
+      int numberOfEdges = scanner.nextInt();
+	    
+      int graph[][] = new int[numberOfNodes][numberOfNodes];
 			 	   
-		 // read and set edges
-	   for (int rows[] : graph) {  
-		  Arrays.fill(rows, -1);  
-	   }
+      // read and set edges
+      for (int rows[] : graph) {  
+	 Arrays.fill(rows, -1);  
+      }
 	   
-	   for (int i = 0; i < numberOfEdges; ++i) {
-		 System.out.println();	  
-		 System.out.print("Enter three integers x,y and r where x and y describe an edge connecting from node x to node y and r denotes the length of edge between these corresponding nodes: ");	  
+      for (int i = 0; i < numberOfEdges; ++i) {
+	 System.out.println();	  
+	 System.out.print("Enter three integers x,y and r where x and y describe an edge connecting from node x to node y and r denotes the length of edge between these corresponding nodes: ");	  
 			  
-		 int source = scanner.nextInt() - 1;
-		 int destination = scanner.nextInt() - 1;
-		 int weight = scanner.nextInt();
+	 int source = scanner.nextInt() - 1;
+	 int destination = scanner.nextInt() - 1;
+	 int weight = scanner.nextInt();
 				                
-		 // add each edge to the graph
-		 graph[source][destination] = weight;
-		 graph[destination][source] = weight; 		 
-	   }
+	 // add each edge to the graph
+	 graph[source][destination] = weight;
+	 graph[destination][source] = weight; 		 
+      }
 			  
-	   primMST(graph, numberOfNodes);      
+      primMST(graph, numberOfNodes);      
 	  		        
-	}
-  }
+      }
+   }
       
