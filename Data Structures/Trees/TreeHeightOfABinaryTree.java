@@ -4,11 +4,11 @@ import java.util.*;
 	 
   public static int getHeight(Node node) {
     if(node == null) {
-       return -1;
-	}
+      return -1;
+    }
     else {
-     return 1 + Math.max(getHeight(node.left), getHeight(node.right));
-   }
+      return 1 + Math.max(getHeight(node.left), getHeight(node.right));
+    }
   }
   
   public static Node insert(Node root,int data) {
