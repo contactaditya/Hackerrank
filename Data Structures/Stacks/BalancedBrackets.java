@@ -33,24 +33,25 @@ import java.util.*;
     	  }
     	}
       }
-     return stack.isEmpty();
+      return stack.isEmpty();
     }
 
-	public static void main(String[] args) {  
-	  Scanner input = new Scanner(System.in);
-	  String expression = new String();	
-	  System.out.print("Please enter an expression with only these characters (){}[]: ");
-	  expression = input.next();  
+    public static void main(String[] args) {  
+       Scanner input = new Scanner(System.in);
+       String expression = new String();	
+       System.out.print("Please enter an expression with only these characters (){}[]: ");
+       expression = input.next();  
 	  
-	  boolean result = isBalanced(expression);
+       boolean result = isBalanced(expression);
 	  
-	  if(result == true) {
-	   System.out.println();
-	   System.out.println("The expression " + expression + " is a balanced expression.");
-	  }
-	  else {
-	   System.out.println();
-	   System.out.println("The expression " + expression + " is not a balanced expression.");	  
-	  }
-	}
-  }
+       if(result == true) {
+	 System.out.println();
+	 System.out.println("The expression " + expression + " is a balanced expression.");
+       }
+       else {
+	 System.out.println();
+	 System.out.println("The expression " + expression + " is not a balanced expression.");	  
+       }
+    }
+ }
+
