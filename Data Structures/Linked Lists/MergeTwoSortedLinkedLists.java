@@ -1,13 +1,13 @@
 import java.util.*;
 
- public class MergeTwoSortedLinkedLists { 	
-	private static LinkedListNode head;
+  public class MergeTwoSortedLinkedLists { 	
+    private static LinkedListNode head;
     private static int size;      
 
     public MergeTwoSortedLinkedLists() {
-	  // this is an empty list, so the reference to the head node is set to a new node with no data				  
-	  head = new LinkedListNode(null);
-	  size = 0;
+       // this is an empty list, so the reference to the head node is set to a new node with no data				  
+       head = new LinkedListNode(null);
+       size = 0;
     }
 
     public static LinkedListNode MergeLists(LinkedListNode headA, LinkedListNode headB) { 
@@ -33,10 +33,9 @@ import java.util.*;
     	 list1.next = MergeLists(list1.next, list);
          return list1;
        }
-
     }
 
-	public static void main(String[] args) { 	  
+    public static void main(String[] args) { 	  
 
-	}  
+    }  
   }
