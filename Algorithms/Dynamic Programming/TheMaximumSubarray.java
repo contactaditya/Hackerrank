@@ -1,28 +1,26 @@
 import java.util.*;
 
-public class TheMaximumSubarray {   
+  public class TheMaximumSubarray {   
  
-   public static int maxContiguousSubArraySum(int[] array) {
-
-     int max = array[0];
-     int sum[] = new int[array.length];
-     sum[0] = array[0];
+    public static int maxContiguousSubArraySum(int[] array) {
+      int max = array[0];
+      int sum[] = new int[array.length];
+      sum[0] = array[0];
     
-     for(int i = 1; i < array.length; i++) {
-       sum[i] = Math.max(array[i], sum[i-1] + array[i]);
-       max = Math.max(max, sum[i]);
-     }
-     return max; 	
-   }	
+      for(int i = 1; i < array.length; i++) {
+        sum[i] = Math.max(array[i], sum[i-1] + array[i]);
+        max = Math.max(max, sum[i]);
+      }
+      return max; 	
+    }	
  
-   public static int maxNonContiguousSubArraySum(int[] array) {
-
-     int max = array[0];
-     int sumMax = 0;
-     boolean negativeArray = true;
-     int result = 0;
+    public static int maxNonContiguousSubArraySum(int[] array) {
+      int max = array[0];
+      int sumMax = 0;
+      boolean negativeArray = true;
+      int result = 0;
 	    
-     for(int i = 0; i < array.length; i++) {
+      for(int i = 0; i < array.length; i++) {
 	if (array[i] >= 0) {
 	  sumMax += array[i];
 	  negativeArray = false;
@@ -30,20 +28,20 @@ public class TheMaximumSubarray {
 	if (array[i] >= max) { 
 	  max = array[i];
 	}
-     }
+      }
    
-     if (negativeArray == false) {
-       result = sumMax;  
-     }
+      if (negativeArray == false) {
+        result = sumMax;  
+      }
 		
-     if (negativeArray) {
-       result = max;
-     }
+      if (negativeArray) {
+        result = max;
+      }
 	
-     return result;	
-   }	
+      return result;	
+    }	
 	
-   public static void main(String[] args) {
+    public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
       System.out.print("Enter the number of test cases: ");    
       int numberOfTests = input.nextInt();
@@ -64,6 +62,6 @@ public class TheMaximumSubarray {
         System.out.print("\n");
 		    
         System.out.println("The value of the sum of the maximum contiguous and non contiguous subarray within an array is: " + max + " " + max1);
-     }
-   }     
- }
+      }
+    }     
+  }
