@@ -14,61 +14,60 @@ import java.io.*;
     }
   }
 
- public class SelfBalancingTree {
-	
-   AVLNode root;	    
-   AVLNode previous;
+  public class SelfBalancingTree {
+    AVLNode root;	    
+    AVLNode previous;
    
-   public int getBalance(AVLNode node) {
-     if(node == null) {	   
+    public int getBalance(AVLNode node) {
+      if(node == null) {	   
 	return 0;   
-     }    	            
+      }    	            
 	 
-     return height(node.left) - height(node.right);  
-   }
+      return height(node.left) - height(node.right);  
+    }
    
-   public int height(AVLNode node) {
-     if(node == null) {	   
-       return 0;   
-     }    	            
+    public int height(AVLNode node) {
+      if(node == null) {	   
+        return 0;   
+      }    	            
 	
-     return node.height;  
-   }   
+      return node.height;  
+    }   
    
-   public AVLNode rightRotate(AVLNode y) {
-     AVLNode x = y.left;
-     AVLNode T2 = x.right;
+    public AVLNode rightRotate(AVLNode y) {
+      AVLNode x = y.left;
+      AVLNode T2 = x.right;
 
-     // Perform rotation
-     x.right = y;
-     y.left = T2;
+      // Perform rotation
+      x.right = y;
+      y.left = T2;
 
-     // Update heights
-     y.height = Math.max(height(y.left), height(y.right)) + 1;
-     x.height = Math.max(height(x.left), height(x.right)) + 1;
+      // Update heights
+      y.height = Math.max(height(y.left), height(y.right)) + 1;
+      x.height = Math.max(height(x.left), height(x.right)) + 1;
 
-     return x;  
-   }   
+      return x;  
+    }   
    
-   public AVLNode leftRotate(AVLNode x) {
-     AVLNode y = x.right;
-     AVLNode T2 = y.left;
+    public AVLNode leftRotate(AVLNode x) {
+      AVLNode y = x.right;
+      AVLNode T2 = y.left;
 
-     // Perform rotation
-     y.left = x;
-     x.right = T2;
+      // Perform rotation
+      y.left = x;
+      x.right = T2;
 
-     // Update heights
-     x.height = Math.max(height(x.left), height(x.right)) + 1;
-     y.height = Math.max(height(y.left), height(y.right)) + 1;
+      // Update heights
+      x.height = Math.max(height(x.left), height(x.right)) + 1;
+      y.height = Math.max(height(y.left), height(y.right)) + 1;
 
-     return y;     
-   }  
+      return y;     
+    }  
    
-   public AVLNode insert(AVLNode root, int value) {
+    public AVLNode insert(AVLNode root, int value) {
       if(root == null) {	   
-	 AVLNode node = new AVLNode(value);
-	 root = node;
+	AVLNode node = new AVLNode(value);
+	root = node;
       }    	          
       if (root.data > value) {    
 	root.left = insert(root.left, value);
@@ -110,29 +109,27 @@ import java.io.*;
 	 return leftRotate(root); 
       }
 	 
-     return root;   
-   }
+      return root;   
+    }
    
-   public void printInorderTraversal(AVLNode node) {
-		 
-     if (node == null) {
-       return;
-     }
+    public void printInorderTraversal(AVLNode node) {	 
+      if (node == null) {
+        return;
+      }
 	 
-     printInorderTraversal(node.left);
-     System.out.print(node.data + " ");	
-     printInorderTraversal(node.right);
-   }
+      printInorderTraversal(node.left);
+      System.out.print(node.data + " ");	
+      printInorderTraversal(node.right);
+    }
 				
-   public static void main(String[] args) {  
-     SelfBalancingTree tree = new SelfBalancingTree();
-     tree.root = tree.insert(tree.root, 3);
-     tree.root = tree.insert(tree.root, 2);
-     tree.root = tree.insert(tree.root, 4);
-     tree.root = tree.insert(tree.root, 5);
+    public static void main(String[] args) {  
+      SelfBalancingTree tree = new SelfBalancingTree();
+      tree.root = tree.insert(tree.root, 3);
+      tree.root = tree.insert(tree.root, 2);
+      tree.root = tree.insert(tree.root, 4);
+      tree.root = tree.insert(tree.root, 5);
 	     
-     System.out.print("Inorder traversal of binary tree is: ");
-     tree.printInorderTraversal(tree.root);	
-
-   }
- }
+      System.out.print("Inorder traversal of binary tree is: ");
+      tree.printInorderTraversal(tree.root);	
+    }
+  }
