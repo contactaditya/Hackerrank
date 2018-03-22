@@ -1,40 +1,39 @@
 import java.util.Scanner;
 
-class LinkedListNode {
-  public Object data; 
-  public LinkedListNode next;
+ class LinkedListNode {
+   public Object data; 
+   public LinkedListNode next;
 
-  //Node constructor
+   //Node constructor
 	    
-  public LinkedListNode(Object data) {
-    this.data = data;
-    next = null;
-  }
+   public LinkedListNode(Object data) {
+     this.data = data;
+     next = null;
+   }
 	    
-  public LinkedListNode(Object data, LinkedListNode next) {
-    this.data = data;
-    this.next = next;
-  }
- 
-  public Object getData() {
-    return data;
-  }
-		
-  public void setData(Object data) {
-    this.data = data; 
-  }
-		
-  public LinkedListNode getNext() {
-    return next;
-  }
-		
-  public void setNext(LinkedListNode next) {
+   public LinkedListNode(Object data, LinkedListNode next) {
+     this.data = data;
      this.next = next;
-  }
+   }
+ 
+   public Object getData() {
+     return data;
+   }
+		
+   public void setData(Object data) {
+     this.data = data; 
+   }
+		
+   public LinkedListNode getNext() {
+     return next;
+   }
+		
+   public void setNext(LinkedListNode next) {
+     this.next = next;
+   }
  }
 
- public class LinkedListsDetectACycle {
-	
+ public class LinkedListsDetectACycle {	
    private static LinkedListNode head;
    private static int size;
 	  
@@ -45,24 +44,23 @@ class LinkedListNode {
      size = 0;
    }
 	
-   boolean hasCycle(LinkedListNode head) {	 
-	    
+   boolean hasCycle(LinkedListNode head) {	 	    
      LinkedListNode fast = head;
      LinkedListNode slow = head;
 		    
      while(fast != null && fast.next != null && slow != null) {
-        slow = slow.next;
-        fast = fast.next.next; 
+       slow = slow.next;
+       fast = fast.next.next; 
 		     
-        if(slow == fast) {
-          return true; 
-        }
+       if(slow == fast) {
+         return true; 
+       }
      }
   
-    return false;   
+     return false;   
    }
 
-  public static void main(String[] args) {
+   public static void main(String[] args) {
      LinkedListsDetectACycle list = new LinkedListsDetectACycle();
      list.head = new LinkedListNode(50);
      list.head.next = new LinkedListNode(20);
@@ -80,5 +78,5 @@ class LinkedListNode {
      else {
         System.out.println("There is no cycle in the linkedlist.");    
      }
-  }
-}
+   }
+ }
