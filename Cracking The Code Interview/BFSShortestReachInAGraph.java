@@ -2,27 +2,25 @@ import java.util.*;
 
 public class BFSShortestReachInAGraph {
 	        
- public static class Graph {
-   
-   private int vertices; // Number of vertices
-   private LinkedList<Integer> adj[]; // Adjacency List for each vertex
+  public static class Graph {  
+    private int vertices; // Number of vertices
+    private LinkedList<Integer> adj[]; // Adjacency List for each vertex
 	           
-   public Graph(int size) {
+    public Graph(int size) {
       vertices = size;
       adj = new LinkedList[size];  
 	            
       for(int i=0;i<size;i++) {
 	 adj[i] = new LinkedList();  
       }	   
-   }
+    }
 
-   public void addEdge(int first, int second) {
+    public void addEdge(int first, int second) {
       adj[first].add(second);  
       adj[second].add(first);  
-   }
+    }
 	        
-   public int[] shortestReach(int startId) { // 0 indexed
-	            
+    public int[] shortestReach(int startId) { // 0 indexed            
       // Mark all the vertices of the graph as not visited. 
       boolean visited[] = new boolean[vertices];
 	  
@@ -41,62 +39,57 @@ public class BFSShortestReachInAGraph {
 	            
       while(!queue.isEmpty()) {
       // Dequeue a vertex from queue and print it.  
-	 startId = queue.poll();
+	startId = queue.poll();
 	   
-   // Get all adjacent vertices of the dequeued vertex source. If the vertex has not been visited yet, then mark it visited and enqueue it.
-		
-	 for(Integer neighbour : adj[startId]) {
-	   if(!visited[neighbour]) {
+        // Get all adjacent vertices of the dequeued vertex source. If the vertex has not been visited yet, then mark it visited and enqueue it.	
+	for(Integer neighbour : adj[startId]) {
+	  if(!visited[neighbour]) {
 	     visited[neighbour] = true;
 	     queue.add(neighbour);
 	     distances[neighbour] = distances[startId] + 6;   
-	   }   
-	 }     
+	  }   
+	}     
       }
-     return distances;    
-   }
+      return distances;    
+    }
   }
 	    
- public static void main(String[] args) {
+  public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.print("Enter the number of queries: ");
     int queries = scanner.nextInt();
  	        
-    for (int t = 0; t < queries; t++) {
-	  
-       System.out.println();
-       System.out.print("Enter the number of nodes and the number of edges in the graph: ");  
-       // Create a graph of size n where each edge weight is 6:
-       Graph graph = new Graph(scanner.nextInt());
- 
-       int m = scanner.nextInt();
-   
-       // read and set edges
-       for (int i = 0; i < m; i++) {   
-         System.out.println();	  
-         System.out.print("Enter two integers u and v which describe an edge connecting from node u to node v: ");	  
+    for (int t = 0; t < queries; t++) {  
+      System.out.println();
+      System.out.print("Enter the number of nodes and the number of edges in the graph: ");  
+      // Create a graph of size n where each edge weight is 6:
+      Graph graph = new Graph(scanner.nextInt());
+      int m = scanner.nextInt();
+      // read and set edges
+      for (int i = 0; i < m; i++) {   
+        System.out.println();	  
+        System.out.print("Enter two integers u and v which describe an edge connecting from node u to node v: ");	  
   
-         int u = scanner.nextInt() - 1;
-         int v = scanner.nextInt() - 1;
+        int u = scanner.nextInt() - 1;
+        int v = scanner.nextInt() - 1;
 	                
-         // add each edge to the graph
-         graph.addEdge(u, v);
-       }
-  
-       System.out.println();	  
-       System.out.print("Enter the index of the starting node: ");	
+        // add each edge to the graph
+        graph.addEdge(u, v);
+      } 
+      System.out.println();	  
+      System.out.print("Enter the index of the starting node: ");	
 	            
-       // Find shortest reach from node s
-       int startId = scanner.nextInt() - 1;
-       int[] distances = graph.shortestReach(startId);
+      // Find shortest reach from node s
+      int startId = scanner.nextInt() - 1;
+      int[] distances = graph.shortestReach(startId);
 	 
-       for (int i = 0; i < distances.length; i++) {  
-         if (i != startId) {
-	   System.out.print(distances[i]);
-	   System.out.print(" ");
-	 }
-       }
-       System.out.println();            
+      for (int i = 0; i < distances.length; i++) {  
+        if (i != startId) {
+	  System.out.print(distances[i]);
+	  System.out.print(" ");
+	}
+      }
+      System.out.println();            
     }        
     scanner.close();
   }
