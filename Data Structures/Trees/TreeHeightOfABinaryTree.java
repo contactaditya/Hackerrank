@@ -1,6 +1,6 @@
 import java.util.*;
 
- public class TreeHeightOfABinaryTree {
+public class TreeHeightOfABinaryTree {
 	 
   public static int getHeight(Node node) {
     if(node == null) {
@@ -17,7 +17,7 @@ import java.util.*;
     }
     else {
       Node current;
-      if(data <= root.data){
+      if(data <= root.data) {
         current = insert(root.left,data);
         root.left = current;
       }
@@ -25,8 +25,8 @@ import java.util.*;
         current = insert(root.right,data);
         root.right = current;
       }
-    return root;
-   }
+      return root;
+    }
   }
 
   public static void main(String[] args) {  
@@ -40,4 +40,4 @@ import java.util.*;
     int height = getHeight(root);
     System.out.println(height);
   }
- }
+}
