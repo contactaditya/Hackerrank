@@ -1,6 +1,6 @@
 import java.util.*;
 
- public class BalancedBrackets { 
+  public class BalancedBrackets { 
     public static char[][] TOKENS = {{'{', '}'}, {'[', ']'}, {'(', ')'}};
     
     public static boolean isOpenTerm(char c) {
@@ -9,7 +9,7 @@ import java.util.*;
     	  return true;	
     	}  
       }	
-     return false;
+      return false;
     }  
     
     public static boolean matches(char openTerm, char closeTerm) {
@@ -18,7 +18,7 @@ import java.util.*;
     	  return array[1] == closeTerm;	
         }  
       }	
-     return false;
+      return false;
     }
     
     public static boolean isBalanced(String expression) {
@@ -37,21 +37,21 @@ import java.util.*;
     }
 
     public static void main(String[] args) {  
-       Scanner input = new Scanner(System.in);
-       String expression = new String();	
-       System.out.print("Please enter an expression with only these characters (){}[]: ");
-       expression = input.next();  
+      Scanner input = new Scanner(System.in);
+      String expression = new String();	
+      System.out.print("Please enter an expression with only these characters (){}[]: ");
+      expression = input.next();  
 	  
-       boolean result = isBalanced(expression);
+      boolean result = isBalanced(expression);
 	  
-       if(result == true) {
-	 System.out.println();
-	 System.out.println("The expression " + expression + " is a balanced expression.");
-       }
-       else {
-	 System.out.println();
-	 System.out.println("The expression " + expression + " is not a balanced expression.");	  
-       }
+      if(result == true) {
+	System.out.println();
+	System.out.println("The expression " + expression + " is a balanced expression.");
+      }
+      else {
+	System.out.println();
+	System.out.println("The expression " + expression + " is not a balanced expression.");	  
+      }
     }
- }
+  }
 
