@@ -7,11 +7,11 @@ import java.util.*;
    NodeHuffman right;
    
    public NodeHuffman(char data, int frequency) {
-      this.data = data;
-      this.frequency = frequency;
-      left = right = null;
+     this.data = data;
+     this.frequency = frequency;
+     left = right = null;
    }
-  } 
+ } 
  
  public class TreeHuffmanDecoding {
 	 
@@ -20,16 +20,16 @@ import java.util.*;
     Node c = root;
     for (int i = 0; i < S.length(); i++) {
       c = S.charAt(i) == '1' ? c.right : c.left;
-        if (c.data!='\0') {
-	  sb.append(c.data);
-	  c = root;
-	}
+      if (c.data!='\0') {
+	sb.append(c.data);
+	c = root;
+      }
     }
-   System.out.print(sb);
+    System.out.print(sb);
   }
 
   public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 
   }
 }
