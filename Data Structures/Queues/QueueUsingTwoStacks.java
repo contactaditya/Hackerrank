@@ -3,8 +3,7 @@ import java.io.*;
 
 public class QueueUsingTwoStacks { 
 	
-  public static class MyQueue<T> {
-	 
+  public static class MyQueue<T> { 
     private Stack<T> stackNewestOnTop = new Stack<T>();
     private Stack<T> stackOldestOnTop = new Stack<T>();
 
@@ -32,7 +31,6 @@ public class QueueUsingTwoStacks {
   }
 		
   public static void main(String[] args) {  
-	 
     MyQueue<Integer> queue = new MyQueue<Integer>();
 
     Scanner scan = new Scanner(System.in);
