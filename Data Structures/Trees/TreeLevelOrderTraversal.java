@@ -1,11 +1,10 @@
 import java.util.*;
 
- public class TreeLevelOrderTraversal { 
-    Node root;	    
-    Node previous;
+public class TreeLevelOrderTraversal { 
+  Node root;	    
+  Node previous;
 
-  public void printLevelOrderTraversal(Node node) {
-		 
+  public void printLevelOrderTraversal(Node node) {	 
     Queue<Node> queue = new LinkedList<Node>();
     queue.add(root);
     while (!queue.isEmpty()) {
@@ -21,9 +20,9 @@ import java.util.*;
         queue.add(tempNode.right);
       }
     }	
- }
+  }
 
- public static void main(String[] args) { 	
+  public static void main(String[] args) { 	
     TreeLevelOrderTraversal tree = new TreeLevelOrderTraversal();
     tree.root = new Node(3);
     tree.root.left = new Node(5);
@@ -34,6 +33,5 @@ import java.util.*;
 	     
     System.out.print("Level order traversal of binary tree is: ");
     tree.printLevelOrderTraversal(tree.root);		
-
- }
+  }
 }
