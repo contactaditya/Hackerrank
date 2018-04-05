@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class SparseArrays {     
  
   public static void countHashMap(String values[], String queries[]) {
-   
     Map<String,Integer> list = new HashMap<String,Integer>();
     
     for (String value : values) {
@@ -33,25 +32,25 @@ public class SparseArrays {
   }
 
   public static void main(String[] args) { 
-     Scanner input = new Scanner(System.in);
-     System.out.print("Enter the number of strings: ");
-     int numberValues = input.nextInt();
-     String[] values = new String[numberValues];
-     System.out.println();	
-     System.out.print("Enter the strings: ");
-     for(int i=0;i<numberValues;i++) {
-        values[i]=input.next(); 
-     } 
-     System.out.println();	
-     System.out.print("Enter the number of queries: ");
-     int numberQueries = input.nextInt();
-     String[] queries = new String[numberQueries];
-     System.out.println();	
-     System.out.print("Enter the queries: ");
-     for(int i=0;i<numberQueries;i++) {
-       queries[i]=input.next(); 
-     } 
-     System.out.println();	
-     countHashMap(values,queries);   
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter the number of strings: ");
+    int numberValues = input.nextInt();
+    String[] values = new String[numberValues];
+    System.out.println();	
+    System.out.print("Enter the strings: ");
+    for(int i=0;i<numberValues;i++) {
+      values[i]=input.next(); 
+    } 
+    System.out.println();	
+    System.out.print("Enter the number of queries: ");
+    int numberQueries = input.nextInt();
+    String[] queries = new String[numberQueries];
+    System.out.println();	
+    System.out.print("Enter the queries: ");
+    for(int i=0;i<numberQueries;i++) {
+      queries[i]=input.next(); 
+    } 
+    System.out.println();	
+    countHashMap(values,queries);   
   }
 }
