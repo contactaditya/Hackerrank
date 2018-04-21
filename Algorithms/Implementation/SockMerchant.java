@@ -15,10 +15,10 @@ public class SockMerchant {
       Integer frequency = colors.get(color);
       
       if(frequency == null) {
-    	 colors.put(color, 1);  
+    	colors.put(color, 1);  
       }
       else {
-    	 colors.put(color, frequency + 1);    
+    	colors.put(color, frequency + 1);    
       }
     }
     
@@ -26,7 +26,7 @@ public class SockMerchant {
     
     int pairs = 0;
     for(Integer frequency : colors.values()) {
-        pairs += frequency >> 1;
+      pairs += frequency >> 1;
     }
     
     System.out.println();	
